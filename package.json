@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.1",
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "path": "^0.12.7"
   },
   "scripts": {
     "start": "nodemon server.js"
@@ -9,7 +10,6 @@
   "name": "akshatkumar",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "author": "",
   "license": "ISC",
   "description": ""
