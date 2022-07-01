@@ -23,11 +23,25 @@ class CommentDashboard extends React.Component {
             },
         ]
     }
+
+    onSubmitClick = (attrs) => {
+        let title = attrs.title;
+        let comment = attrs.comment;
+        let name = attrs.name; 
+        let id = attrs.id;
+        this.setState({
+            commentsList : this.state.commentsList.concat(
+                {
+                    title,comment,name,id
+                }
+            )
+        })
+    }
     render() {
         return(
             <div>
             <CommentView commentsList = {this.state.commentsList}/>
-            <CommentForm />
+            <CommentForm onSubmitClick = {this.onSubmitClick}/>
             </div>
         )
     }
@@ -55,9 +69,10 @@ class Comment extends React.Component {
     render() {
         return(
             <div>
-                <h6>{this.props.title}</h6>
+               <hr/>
+                <p>{this.props.title}</p>
                 <p>{this.props.comment}</p>
-                <p>{this.props.name}</p>
+                <h6>{this.props.name}</h6>
             </div>
 
         )
@@ -66,9 +81,56 @@ class Comment extends React.Component {
 
 
 class CommentForm extends React.Component {
+    state = {
+        title: '',
+        comment: '',
+        name: '',
+    };
+
+    handleTitleChange = (e) => {
+       this.setState({title: e.target.value})
+    }
+    handleCommentChange = (e) => {
+        this.setState({comment: e.target.value})
+    }
+    
+    handleNameChange = (e) => {
+        this.setState({name: e.target.value})
+    }
+    handleSubmit = () => {
+        this.props.onSubmitClick({
+            title: this.state.title,
+            comment: this.state.comment,
+            name: this.state.name,
+            id : uuid.v4()
+
+        })
+    }
     render() {
         return(
-            <p>HEre you will enter you comments</p>
+            <div>
+                <label>Title:</label>
+                <input 
+                    type = 'text'
+                    value = {this.state.title}
+                    onChange = {this.handleTitleChange}
+                />
+                <label>Comment:</label>
+                <input 
+                    type = 'text'
+                    value = {this.state.comment}
+                    onChange = {this.handleCommentChange}
+                    />
+                <label>Name:</label>    
+                <input
+                    type = 'text'
+                    value = {this.state.name}
+                    onChange = {this.handleNameChange}        
+                />
+                <button
+                 onClick = {this.handleSubmit}
+                >Submit</button>
+            </div>
         )
     }
 }
