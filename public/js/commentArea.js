@@ -39,7 +39,7 @@ class CommentDashboard extends React.Component {
     }
     render() {
         return(
-            <div>
+            <div className = "container-md">
             <CommentView commentsList = {this.state.commentsList}/>
             <CommentForm onSubmitClick = {this.onSubmitClick}/>
             </div>
@@ -68,11 +68,14 @@ class CommentView extends React.Component {
 class Comment extends React.Component {
     render() {
         return(
-            <div>
-               <hr/>
+            <div className = 'card'>
+                <div className = 'card-header'>
                 <p>{this.props.title}</p>
+                </div>
+                <div className = 'card-body'>
                 <p>{this.props.comment}</p>
                 <h6>{this.props.name}</h6>
+                </div>
             </div>
 
         )
@@ -98,39 +101,55 @@ class CommentForm extends React.Component {
         this.setState({name: e.target.value})
     }
     handleSubmit = () => {
+        if (this.state.title.length != 0
+             && this.state.comment.length != 0 
+             && this.state.name.length != 0) {
         this.props.onSubmitClick({
             title: this.state.title,
             comment: this.state.comment,
             name: this.state.name,
             id : uuid.v4()
-
         })
+    }
     }
     render() {
         return(
-            <div>
-                <label>Title:</label>
+               <div>
+                <div className = 'mb-3'>
+                <label className = 'form-label' >Title:</label>
                 <input 
+                    className = 'form-control'
                     type = 'text'
                     value = {this.state.title}
                     onChange = {this.handleTitleChange}
+                    required
                 />
-                <label>Comment:</label>
+                </div>
+                <div className = 'mb-3'>
+                <label className = 'form-label' >Comment:</label>
                 <input 
+                    className = 'form-control'
                     type = 'text'
                     value = {this.state.comment}
                     onChange = {this.handleCommentChange}
+                    required
                     />
-                <label>Name:</label>    
+                </div>
+                <div className = 'mb-3'>
+                <label className = 'form-label' >Name:</label>    
                 <input
+                    className = 'form-control'
                     type = 'text'
                     value = {this.state.name}
-                    onChange = {this.handleNameChange}        
+                    onChange = {this.handleNameChange}
+                    required        
                 />
+                </div>
                 <button
+                 className = 'btn btn-primary'
                  onClick = {this.handleSubmit}
                 >Submit</button>
-            </div>
+                </div>
         )
     }
 }
