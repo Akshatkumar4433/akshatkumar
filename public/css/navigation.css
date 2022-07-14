@@ -6,7 +6,7 @@
     justify-content: space-around;
     color: slategray;
     font-family: 'Oswald', sans-serif;
-    font-size: medium;
+    font-size: large;
 }
 
 .box {
@@ -28,9 +28,18 @@ a:hover {
     color: #57cbff;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .navigation-list {
         flex-direction: column;
         align-content: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .box {
+        width: 100%
+    }
+    .box-logo {
+        width: 100%;
+        text-align: center;
     }
 }
