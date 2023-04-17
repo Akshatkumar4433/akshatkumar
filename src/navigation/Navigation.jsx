@@ -4,18 +4,18 @@ import EmailIcon from '@mui/icons-material/Email';
 
 function Navigation() {
   return (
-    <div className='flex flex-row gap-2'>
-        <div className='grow  text-lg'>
-            <span className='text-lg'>
-                Akshat Kumar
-            </span>
+    <div className='flex flex-row  justify-around'>
+        <div className='grow border text-center'>
+                <span className='text-2xl'>
+                    Akshat Kumar
+                </span>
         </div>
-        <div className='text-4xl' >
+        <div className='text-4xl grow w-20 border' >
                 <ReceiptLongIcon
                     fontSize = 'inherit'
                 />
         </div>
-        <div className='text-4xl'>
+        <div className='text-4xl grow w-20 border'>
                 <EmailIcon
                    fontSize = 'inherit'
                 />
