@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import {motion} from 'framer-motion';
 
-function NavMinView() {
+
+function NavMinView({sideVariants}) {
   const [openMenuBoolean,setOpenMenuBoolean] = useState(false);
   
   const openMenu = () => {
@@ -21,21 +23,56 @@ function NavMinView() {
             >Menu</button>
         </div>
     </div>
-     {openMenuBoolean?<Menu/>:false}
+     {openMenuBoolean?<Menu sideVariants = {sideVariants}/>:false}
     </>
   )
 }
 
 
 
-const Menu = () => {
+const Menu = ({sideVariants}) => {
     return (
-        <div className='hidden tablet:flex'>
-            <ul>
-                <li>Projects</li>
-                <li>Contact</li>
+        <motion.aside
+         initial = {{width:0}}
+         animate= {{width:700}}
+        >
+        <motion.div 
+            initial = "closed"
+            animate = "open"
+            variants = {sideVariants}
+        >
+        <div className='hidden tablet:flex border flex-col'>
+            <div>
+                <p>Images</p>
+            </div>
+            <ul className='border text-center'>
+            <motion.div
+                           whileHover={{ scale: 1.2 }}
+                           whileTap={{ scale: 0.9 }}
+                           transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+                <li>
+                    <motion.a href = {''}>
+                        Projects
+                    </motion.a>
+                </li>
+            </motion.div>
+            <motion.div
+                           whileHover={{ scale: 1.2 }}
+                           whileTap={{ scale: 0.9 }}
+                           transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+             <li>
+                 <motion.a href = {''}>
+                 Contact
+                 </motion.a>
+            </li>
+            </motion.div>
+                
             </ul>
         </div>
+        </motion.div>
+        </motion.aside>
     );
 }
 
