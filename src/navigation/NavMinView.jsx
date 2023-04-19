@@ -26,7 +26,7 @@ function NavMinView({links}) {
                 />
             </button>
         </div>
-        {openMenuBoolean?<Menu/>:false}
+        {openMenuBoolean?<Menu links = {links}/>:false}
     </div>
     </>
   )
@@ -34,37 +34,14 @@ function NavMinView({links}) {
 
 
 
-const Menu = ({sideVariants}) => {
+const Menu = ({sideVariants,links}) => {
     return (
         <div className='flex border flex-col w-screen ml-4 mr-4'>
-            <div>
-                <p>Images</p>
-            </div>
-            <ul className='border text-center'>
-            <motion.div
-                           whileHover={{ scale: 1.2 }}
-                           whileTap={{ scale: 0.9 }}
-                           transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-                <li>
-                    <motion.a href = {''}>
-                        Projects
-                    </motion.a>
-                </li>
-            </motion.div>
-            <motion.div
-                           whileHover={{ scale: 1.2 }}
-                           whileTap={{ scale: 0.9 }}
-                           transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-             <li>
-                 <motion.a href = {''}>
-                 Contact
-                 </motion.a>
-            </li>
-            </motion.div>
-                
-            </ul>
+            {links.map(({name, to, id}) => (
+                <a key = {id} href = {to}>
+                    {name}
+                </a>
+            ))}
         </div>
        
     );

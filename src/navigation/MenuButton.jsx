@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const path01Variants = {
@@ -35,13 +34,13 @@ const MenuButton = ({isOpen}) => {
         <motion.path
           {...path01Variants.closed}
           animate={path01Controls}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.1 }}
           stroke="#000000"
         />
         <motion.path
           {...path02Variants.closed}
           animate={path02Controls}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.1 }}
           stroke="#000000"
         />
       </svg>
