@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import {motion} from 'framer-motion';
+import MenuButton from './MenuButton';
 
-
-function NavMinView({sideVariants}) {
+function NavMinView({links}) {
   const [openMenuBoolean,setOpenMenuBoolean] = useState(false);
   
   const openMenu = () => {
@@ -20,9 +20,13 @@ function NavMinView({sideVariants}) {
         <div className='  border mr-4 box-border'>
             <button
                 onClick={openMenu}
-            >Menu</button>
+            >
+                <MenuButton
+                    isOpen = {openMenuBoolean}
+                />
+            </button>
         </div>
-        {openMenuBoolean?<Menu sideVariants = {sideVariants}/>:false}
+        {openMenuBoolean?<Menu/>:false}
     </div>
     </>
   )
@@ -32,16 +36,7 @@ function NavMinView({sideVariants}) {
 
 const Menu = ({sideVariants}) => {
     return (
-        <motion.aside
-         initial = {{width:0}}
-         animate= {{width:700}}
-        >
-        <motion.div 
-            initial = "closed"
-            animate = "open"
-            variants = {sideVariants}
-        >
-        <div className='flex border flex-col'>
+        <div className='flex border flex-col w-screen ml-4 mr-4'>
             <div>
                 <p>Images</p>
             </div>
@@ -71,8 +66,7 @@ const Menu = ({sideVariants}) => {
                 
             </ul>
         </div>
-        </motion.div>
-        </motion.aside>
+       
     );
 }
 
