@@ -6,7 +6,7 @@ import {motion} from 'framer-motion';
 
 function NavDesktop() {
   return (
-    <div className='hidden desktop:flex flex-row  justify-around mt-7 '>
+    <div className='hidden desktop:flex flex-row  justify-around '>
         <div className='grow  text-center'>
                 <span className='text-2xl'>
                     Akshat Kumar

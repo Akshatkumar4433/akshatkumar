@@ -4,7 +4,7 @@ import NavMinView from './NavMinView'
 
 function Navigation() {
   return (
-      <div>
+      <div className='mt-7'>
           <NavDesktop/>
           <NavMinView/>
      </div>
