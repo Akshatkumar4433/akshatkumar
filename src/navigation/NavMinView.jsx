@@ -22,8 +22,8 @@ function NavMinView({sideVariants}) {
                 onClick={openMenu}
             >Menu</button>
         </div>
+        {openMenuBoolean?<Menu sideVariants = {sideVariants}/>:false}
     </div>
-     {openMenuBoolean?<Menu sideVariants = {sideVariants}/>:false}
     </>
   )
 }
@@ -41,7 +41,7 @@ const Menu = ({sideVariants}) => {
             animate = "open"
             variants = {sideVariants}
         >
-        <div className='hidden tablet:flex border flex-col'>
+        <div className='flex border flex-col'>
             <div>
                 <p>Images</p>
             </div>
