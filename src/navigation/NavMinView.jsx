@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {motion} from 'framer-motion';
 import MenuButton from './MenuButton';
 
+
+
 function NavMinView({links}) {
   const [openMenuBoolean,setOpenMenuBoolean] = useState(false);
   
@@ -12,12 +14,12 @@ function NavMinView({links}) {
   return (
       <>
     <div className='hidden tablet:flex flex-wrap border'>
-        <div className='grow  text-left ml-4 border'>
+        <div className='grow  text-left ml-4 '>
                 <span className='text-2xl'>
                     Akshat Kumar
                 </span>
         </div>
-        <div className='  border mr-4 box-border'>
+        <div className='   mr-4 box-border'>
             <button
                 onClick={openMenu}
             >
@@ -36,7 +38,7 @@ function NavMinView({links}) {
 
 const Menu = ({sideVariants,links}) => {
     return (
-        <div className='flex border flex-col w-screen ml-4 mr-4 text-center text-xl'>
+        <div className='flex flex-col w-screen ml-4 mr-4 text-center text-xl bg-navBackground'>
             {links.map(({name, to, id}) => (
                   <motion.div
                   whileHover={{ scale: 1.2 }}

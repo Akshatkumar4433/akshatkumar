@@ -8,7 +8,12 @@ module.exports = {
       'desktop':'768px',
       'tablet':{'max':'767px'},
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'navBackground': "url('./images/navBackground.jpg')"
+      }
+    },
   },
   plugins: [],
 }
+
