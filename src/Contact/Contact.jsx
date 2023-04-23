@@ -7,6 +7,7 @@ function Contact() {
                     mx-10
                     mt-10
                     '>
+      <form method='post' action = "https://formspree.io/f/mdovyljj">
       <div className='border p-10'>
         <label className = 'block text-2xl'for = 'email'  >Email:</label>
         <input className='border-2 w-full text-lg' type= 'text' name = 'email' />
@@ -21,7 +22,7 @@ function Contact() {
         Send
         </button>
        </div>
-      
+      </form>
     </div>
   )
 }
