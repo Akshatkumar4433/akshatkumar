@@ -36,11 +36,17 @@ function NavMinView({links}) {
 
 const Menu = ({sideVariants,links}) => {
     return (
-        <div className='flex border flex-col w-screen ml-4 mr-4'>
+        <div className='flex border flex-col w-screen ml-4 mr-4 text-center text-xl'>
             {links.map(({name, to, id}) => (
+                  <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+               >
                 <a key = {id} href = {to}>
-                    {name}
+                            {name}
                 </a>
+                </motion.div>
             ))}
         </div>
        
