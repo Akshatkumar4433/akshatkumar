@@ -4,7 +4,11 @@ import MenuButton from './MenuButton';
 
 
 
-function NavMinView({links}) {
+function NavMinView() {
+    const links = [
+        {name:'Projects', to : 'projects' , id: 1},
+        {name: 'Contact', to: 'contact' , id: 2}
+    ]  
   const [openMenuBoolean,setOpenMenuBoolean] = useState(false);
   
   const openMenu = () => {
@@ -16,7 +20,7 @@ function NavMinView({links}) {
     <div className='hidden tablet:flex flex-wrap border'>
         <div className='grow  text-left ml-4 '>
                 <span className='text-2xl'>
-                    Akshat Kumar
+                    <a href = '/'>Akshat Kumar</a>
                 </span>
         </div>
         <div className='   mr-4 box-border'>
