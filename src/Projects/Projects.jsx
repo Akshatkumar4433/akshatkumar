@@ -1,8 +1,22 @@
+import { Description } from '@mui/icons-material'
 import React from 'react'
+import Project from './Project'
+import projectsData from './ProjectsData'
+
+
 
 function Projects() {
+
+  const projects = projectsData.map((project) => (
+      <Project
+          key = {project.id}
+          project = {project}
+     />
+  ))
   return (
-    <div>Projects</div>
+    <div className='border h-screen'>
+      {projects}
+    </div>
   )
 }
 
