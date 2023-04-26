@@ -9,7 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
   
   return (
-    <div className='text-[#000000] bg-[#FDF4F5] h-screen'>
+    <div className='text-[#000000] bg-[#FDF4F5] h-screen w-screen'>
       <Navigation/>
       <BrowserRouter>
         <Routes>
