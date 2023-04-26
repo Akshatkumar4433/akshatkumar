@@ -6,7 +6,7 @@ function Navigation() {
   
 
   return (
-      <div className='desktop:mt-7 tablet:border  text-[#1D1D1]'>
+      <div className = ' font-navigation font-semibold text-[#E8A0BF]'>
           <NavDesktop/>
           <NavMinView/>
      </div>

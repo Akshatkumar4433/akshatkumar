@@ -8,18 +8,13 @@ module.exports = {
       'desktop':'768px',
       'tablet':{'max':'767px'},
     },
-    textColor:{
-      'carbon':'#A9A9A9',
-    },
-    backgroundColor: {
-      'neutral':'EFEFEF'
-    },
-    extend: {
-      backgroundImage: {
-        'navBackground': "url('./images/navBackground.jpg')"
-      }
-    },
-  },
+   
+   fontFamily: {
+      'navigation': ['Roboto Slab','Open Sans', 'Roboto','Sans'],
+      'about': ['Roboto Slab'],
+   } ,
   plugins: [],
 }
+}
+
 

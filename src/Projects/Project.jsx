@@ -11,7 +11,7 @@ function Project({ key,project}) {
             alt={project.name} 
                className ='mx-auto'/>
         <div className='flex mx-auto gap-2'>
-            <h1 className=' text-xl'>{project.name}</h1>
+            <h1 className=' text-xl font-navigation'>{project.name}</h1>
             <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
@@ -33,7 +33,7 @@ function Project({ key,project}) {
             </a>
             </motion.div>
         </div>
-        <p className='  text-lg tablet: mx-20 desktop:ml-40 desktop:mr-40'>{project.description}</p>
+        <p className=' font-about font-light text-lg tablet: mx-20 desktop:ml-40 desktop:mr-40'>{project.description}</p>
     </div>
   )
 }
