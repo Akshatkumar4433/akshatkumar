@@ -6,7 +6,7 @@ import {motion} from 'framer-motion';
 
 function NavDesktop({links}) {
   return (
-    <div className='hidden desktop:flex flex-row  justify-around border '>
+    <div className='hidden desktop:flex flex-row  justify-around '>
         <div className='grow  text-center'>
                 <span className='text-2xl'>
                     <a href = '/'>Akshat Kumar</a>

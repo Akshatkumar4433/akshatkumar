@@ -9,7 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
   
   return (
-    <>
+    <div>
       <Navigation/>
       <BrowserRouter>
         <Routes>
@@ -19,7 +19,7 @@ function App() {
           <Route path = '*' element = {<NoPage/>}/>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

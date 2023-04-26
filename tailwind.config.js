@@ -8,6 +8,12 @@ module.exports = {
       'desktop':'768px',
       'tablet':{'max':'767px'},
     },
+    textColor:{
+      'carbon':'#A9A9A9',
+    },
+    backgroundColor: {
+      'neutral':'EFEFEF'
+    },
     extend: {
       backgroundImage: {
         'navBackground': "url('./images/navBackground.jpg')"

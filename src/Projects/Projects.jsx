@@ -14,7 +14,7 @@ function Projects() {
      />
   ))
   return (
-    <div className='border h-screen mt-5'>
+    <div className='h-screen desktop:mt-5 tablet:mt-2'>
       {projects}
     </div>
   )

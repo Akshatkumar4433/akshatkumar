@@ -17,7 +17,7 @@ function NavMinView() {
 
   return (
       <>
-    <div className='hidden tablet:flex flex-wrap border'>
+    <div className='hidden tablet:flex flex-wrap '>
         <div className='grow  text-left ml-4 '>
                 <span className='text-2xl'>
                     <a href = '/'>Akshat Kumar</a>
@@ -42,7 +42,7 @@ function NavMinView() {
 
 const Menu = ({sideVariants,links}) => {
     return (
-        <div className='flex flex-col w-screen ml-4 mr-4 text-center text-xl bg-navBackground'>
+        <div className='flex flex-col w-screen ml-4 mr-4 text-center text-xl '>
             {links.map(({name, to, id}) => (
                   <motion.div
                   whileHover={{ scale: 1.2 }}
