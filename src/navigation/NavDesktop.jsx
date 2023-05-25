@@ -1,6 +1,7 @@
 import React from 'react'
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import EmailIcon from '@mui/icons-material/Email';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import {motion} from 'framer-motion';
 
 
@@ -32,6 +33,18 @@ function NavDesktop({links}) {
                         <a href = 'contact'>
                         <EmailIcon
                             fontSize = 'inherit'
+                        />
+                        </a>
+                        </motion.div>
+
+                        <motion.div
+                           whileHover={{ scale: 1.2 }}
+                           whileTap={{ scale: 0.9 }}
+                           transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        >
+                        <a href = 'me'>
+                        <SentimentSatisfiedAltIcon
+                            fontSize='inherit'
                         />
                         </a>
                         </motion.div>
